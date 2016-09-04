@@ -1,7 +1,7 @@
 # Rest Api Currency-Exchange-Rates
 Api Rest para consultar las divisas entre las monedas de dos paises, a partir de consultar por el codigo de pais
 
-CONSTRUCCION Y EJECUCION DE ESTE PROYECTO
+# CONSTRUCCION Y EJECUCION DE ESTE PROYECTO
 1. Sistema operativo Ubuntu 14.0
 2. Java jdk 1.7.0_65
 3. Servidor Tomcat 7.0.27
