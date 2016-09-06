@@ -84,19 +84,13 @@ public class JSONService {
 						if(rateResult.getStatus_code().equals(EnumErrores.OK.getCerCodeError())){
 							result.setRate(rateResult.getRate());							
 						}else{
-							result.setCurrencySource(null);
-							result.setCurrencyTarget(null);
-							result.setRate(null);							
+							result = resetErrorResult(result);
 						}						
 					}else{
-						result.setCurrencySource(null);
-						result.setCurrencyTarget(null);
-						result.setRate(null);
+						result = resetErrorResult(result);
 					}					
 				}else{
-					result.setCurrencySource(null);
-					result.setCurrencyTarget(null);
-					result.setRate(null);					
+					result = resetErrorResult(result);					
 				}
 			}else{
 				result.setStatus_code(EnumErrores.ERROR_CODE_COUNTRY_SAME.getCerCodeError());
@@ -108,7 +102,14 @@ public class JSONService {
 		}
 		logger.debug("IN getForeignExchangeInJSON");
 		return result;
-	}	
+	}
+	
+	private ForeingExchangeResult resetErrorResult(ForeingExchangeResult result){
+		result.setCurrencySource(null);
+		result.setCurrencyTarget(null);
+		result.setRate(null);
+		return result;	
+	}
 	
 	/**
 	 * 
